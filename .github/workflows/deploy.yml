@@ -1,19 +1,20 @@
-name: index.html
+name: Validate HTML and CSS
 
 on:
   push:
-    branches:
-      - develop
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  validate:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
+      - uses: actions/checkout@v2
       - name: Validate HTML
-        uses: jakejarvis/html-validate-action@v2
+        uses: w3c-validation/action@v1
         with:
-          path: ./index.html
-          config: ./html-validate.json  # Replace wit
+          files: '../index.html'
+      - name: Validate CSS
+        uses: styfle/stylelint-action@v1
+        with:
+          files: '../estilos.css'
