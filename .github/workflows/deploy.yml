@@ -1,0 +1,20 @@
+name: Validate HTML and CSS
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Validate HTML
+        uses: w3c-validation/action@v1
+        with:
+          files: '../index.html'
+      - name: Validate CSS
+        uses: styfle/stylelint-action@v1
+        with:
+          files: '../Estilos.css'
