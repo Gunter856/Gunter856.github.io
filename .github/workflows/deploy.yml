@@ -17,4 +17,4 @@ jobs:
       - name: Validate CSS
         uses: styfle/stylelint-action@v1
         with:
-          files: '../estilos.css'
+          files: '../Estilos(Tarea2.2).css'
