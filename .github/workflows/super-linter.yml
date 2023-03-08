@@ -27,9 +27,10 @@ jobs:
         uses: github/super-linter@v4
 
         env:
-          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: "develop"
           VALIDATE_HTML: true
+          VALIDATE_CSS: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Merge commit
